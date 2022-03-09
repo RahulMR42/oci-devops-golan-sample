@@ -1,0 +1,5 @@
+package main
+
+import "fmt"
+func main() {
+    fmt.Println("Hi from Golan program with OCI devops")

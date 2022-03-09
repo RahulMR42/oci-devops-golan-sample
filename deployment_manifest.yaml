@@ -6,22 +6,22 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-rust-app-deployment
+  name: sample-golan-app-deployment
   namespace: ${namespace}
 spec:
   selector:
     matchLabels:
-      app: sample-rust-app
+      app: sample-golan-app
   replicas: 3
   template:
     metadata:
       labels:
-        app: sample-rust-app
+        app: sample-golan-app
     spec:
       containers:
-        - name: sample-rust-app
+        - name: sample-golan-app
           # enter the path to your image, be sure to include the correct region prefix
-          image: us-ashburn-1.ocir.io/fahdabidiroottenancy/rahul/mr-devops/mr-devops-rust-sample:${BUILDRUN_HASH}
+          image: us-ashburn-1.ocir.io/fahdabidiroottenancy/rahul/mr-devops/mr-devops-golan-sample:${BUILDRUN_HASH}
           #${BUILDRUN_HASH}
           imagePullPolicy: Always
           ports:
@@ -37,7 +37,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sample-rust-app-service
+  name: sample-golan-app-service
   namespace: ${namespace}
   annotations: 
     service.beta.kubernetes.io/oci-load-balancer-shape: "10Mbps"
@@ -48,4 +48,4 @@ spec:
       protocol: TCP
       targetPort: 8080
   selector:
-    app: sample-rust-app
+    app: sample-golan-app

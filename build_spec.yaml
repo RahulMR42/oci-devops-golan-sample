@@ -30,8 +30,11 @@ steps:
     command: |
       export BUILDRUN_HASH=`echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7`
       echo "BUILDRUN_HASH: " $BUILDRUN_HASH
-      less /etc/passwd
-      exit 1
+      useradd -m -G wheel -s /bin/bash user
+      su user
+      id -a
+
+      
       
 # Its an optional stage if you need the rust and cargo to be installed on build .In our case the whole action is managed by docker container.
   - type: Command

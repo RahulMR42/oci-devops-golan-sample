@@ -37,7 +37,9 @@ steps:
     name: "Build the app"
     command: |
       cd ${OCI_PRIMARY_SOURCE_DIR}
+      tar -xzf gocli.tar.gz
       ls -ltr 
+
 
     
     onFailure:

@@ -21,7 +21,7 @@ inputArtifacts:
     - name: golan-cli
       type: URL 
       url: https://go.dev/dl/go1.17.8.linux-amd64.tar.gz
-      location: ${OCI_PRIMARY_SOURCE_DIR}
+      location: ${OCI_PRIMARY_SOURCE_DIR}/gocli.tar.gz
 
 steps:
   - type: Command

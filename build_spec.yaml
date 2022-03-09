@@ -39,9 +39,12 @@ steps:
 # Its an optional stage if you need the rust and cargo to be installed on build .In our case the whole action is managed by docker container.
   - type: Command
     timeoutInSeconds: 600
+    runAs: operator
     name: "Build the app"
     command: |
       cd ${OCI_PRIMARY_SOURCE_DIR}
+      id -a 
+      exit 1
       tar -xzf gocli.tar.gz
       ./go build sample-program.go 
 

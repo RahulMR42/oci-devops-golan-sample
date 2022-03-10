@@ -45,9 +45,6 @@ steps:
       go build sample-program.go
       ls- ltr 
 
-      
-
-
     
     onFailure:
       - type: Command

@@ -39,10 +39,13 @@ steps:
     name: "Build the app"
     command: |
       cd ${OCI_PRIMARY_SOURCE_DIR}
-      tar -xzf gocli.tar.gz
-      ./go/bin/go build sample-program.go 
-      ls -ltr 
-      exit 1
+      rm -rf /usr/local/go && tar -C /usr/local -xzf gocli.tar.gz
+      export PATH=$PATH:/usr/local/go/bin
+      go version
+      go build sample-program.go
+      ls- ltr 
+
+      
 
 
     

@@ -43,7 +43,7 @@ steps:
       export PATH=$PATH:/usr/local/go/bin
       go version
       go build sample-program.go
-      ls- ltr 
+      ls -ltr 
 
     
     onFailure:

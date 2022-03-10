@@ -41,6 +41,8 @@ steps:
       cd ${OCI_PRIMARY_SOURCE_DIR}
       tar -xzf gocli.tar.gz
       ./go/bin/go build sample-program.go 
+      ls -ltr 
+      exit 1
 
 
     

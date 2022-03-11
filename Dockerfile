@@ -2,7 +2,7 @@ FROM golang
 
 WORKDIR /app
 
-COPY * ./
+COPY * /app/
 
 
 EXPOSE 8080

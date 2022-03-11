@@ -42,8 +42,7 @@ steps:
       rm -rf /usr/local/go && tar -C /usr/local -xzf gocli.tar.gz
       export PATH=$PATH:/usr/local/go/bin
       go version
-      go build sample-program.go -o main
-      ls -ltr 
+      
 
     
     onFailure:

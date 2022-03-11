@@ -116,7 +116,13 @@ outputArtifacts:
 
 ![](images/oci-devops-deployment.png)
 
+- Add a stage as `Apply manifest to your Kubernetes cluster`.
+
 ![](images/oci-deploy-oke-stage.png)
+
+- Associate the the `oke environment` created.
+
+![](images/oci-deploy-oke-stage-2.png)
 
 - Create a `deployment parameter` as `namespace` and give a namespace value.
 
@@ -126,6 +132,7 @@ outputArtifacts:
 
 
 ![](images/oci-deploy-trigger-deployment.png)
+
 
 - Associate the deployment pipeline. 
 
@@ -179,7 +186,7 @@ kubectl get all -n <namespace>
 
 
 ```
-curl http://EXTERNAL-IP/v0/hello
+curl http://EXTERNAL-IP
 ```
 
 ![](images/app-curl-view.png)
@@ -189,12 +196,6 @@ curl http://EXTERNAL-IP/v0/hello
 ![](images/app-browser-view.png)
 
 
-- Incase of a wrong url you may get an exception as well like below.
-
-
-```
-We lost with the path '/wrongpath'
-```
 
 
 Read more 

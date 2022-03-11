@@ -17,6 +17,9 @@ env:
     - BUILDRUN_HASH
 
 
+#Its a native way to fetch artifacts from external or artifact repo or a file path to use before a stage.
+# More about buildspec formats - https://docs.oracle.com/en-us/iaas/Content/devops/using/build_specs.htm
+
 inputArtifacts: 
     - name: golan-cli
       type: URL 

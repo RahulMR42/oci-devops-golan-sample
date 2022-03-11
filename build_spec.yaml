@@ -33,7 +33,7 @@ steps:
       
 
       
-#You may skip below and can run the build inside the docker itself.
+#You may skip below and can run the build inside the docker container itself,while building the docker image.
   - type: Command
     timeoutInSeconds: 600
     name: "Build the app"
@@ -42,7 +42,7 @@ steps:
       rm -rf /usr/local/go && tar -C /usr/local -xzf gocli.tar.gz
       export PATH=$PATH:/usr/local/go/bin
       go version
-      go build sample-program.go
+      go build sample-program.go -o main
       ls -ltr 
 
     

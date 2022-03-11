@@ -2,9 +2,9 @@ FROM golang
 
 WORKDIR /app
 
-COPY * /app/
+COPY * .
 
 
 EXPOSE 8080
 
-CMD [ "/sample-program" ]
+CMD [ "sample-program" ]

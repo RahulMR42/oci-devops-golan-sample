@@ -71,7 +71,7 @@ If you are using a code repo other than `OCI code repo` ,ensure to set an extern
 ![](images/oci-manage-build-2.png)
 
 
-- Add an `Upload artifact` stage to the build pipeline.
+- Add an `Deliver artifact` stage to the build pipeline.
 
 ![](images/oci-build-upload-artifact-1.png)
 
@@ -79,7 +79,7 @@ If you are using a code repo other than `OCI code repo` ,ensure to set an extern
 
 ![](images/oci-build-upload-artifact-2.png)
 
-- Associate the build stage artifact names .
+- Associate the build stage `output artifact` names .
 
 ![](images/oci-build-upload-artifact-3.png)
 
@@ -87,13 +87,13 @@ If you are using a code repo other than `OCI code repo` ,ensure to set an extern
 
 ```
 outputArtifacts:
-  - name: rust_app_base_image
+  - name: golan_app_base_image
     type: DOCKER_IMAGE
     # this location tag doesn't effect the tag used to deliver the container image
     # to the Container Registry
-    location: rust_app_base:latest
+    location: golan_app_base:latest
 
-  - name: rust_kube_manifest
+  - name: golan_kube_manifest
     type: BINARY
     # this location tag doesn't effect the tag used to deliver the container image
     # to the Container Registry
@@ -104,10 +104,12 @@ outputArtifacts:
 
 ![](images/oci-oke.png)
 
+
 - Create a new devops environment as type `Kubernete Cluster`.-https://docs.oracle.com/en-us/iaas/Content/devops/using/create_oke_environment.htm  
 
 
 ![](images/oci-devops-oke-env.png)
+![](images/oci-devops-oke-env-2.png)
 
 
 - Create a new devops deployment pipeline. - https://docs.oracle.com/en-us/iaas/Content/devops/using/deployment_pipelines.htm 
